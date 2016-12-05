@@ -7,5 +7,5 @@ autosh.sh通过执行mountgetsh.sh,treesh.sh生成旧版和新版的目录树文
 执行命令./summary.sh ftree-cmp.patch用于去掉patch文件中没有修饰符（eg:! + -）的信息,生成sftree-cmp**.patch文件
 执行命令sh backupsh.sh android-new.raw (用户自行指定的路径)进行微信聊天信息的备份
 执行命令sh recoversh.sh android-old.raw (用户自行指定的路径)进行微信聊天信息的恢复
-设置配置文件confile用于存放路径信息
+设置配置文件confile用于存放路径信息,该文件须用户根据自己实际操作情况进行编写
 注:执行以上脚本须在root权限下
