@@ -1,0 +1,11 @@
+运行脚本autosh.sh(运行环境需要mountgetsh.sh,treesh.sh脚本以及两个raw文件在同一目录下),参数为android-old.raw和android-new.raw
+执行命令sh autosh.sh android-old.raw android-new.raw
+mountgetsh.sh用于挂载安卓镜像文件
+treesh.sh用于生成目录树文件（.txt格式）
+autosh.sh通过执行mountgetsh.sh,treesh.sh生成旧版和新版的目录树文件（.txt格式）和它们之间的差异文件（.patch格式）。默认生成的是ftreeforandroid-old.txt、ftreeforandroid-new.txt和ftree-cmp.patch,所以这里需要手工改名。
+执行命令./mergesh.sh ftree-cmp.patch用于合并同名目录,生成文件ftree-cmp.patch
+执行命令./summary.sh ftree-cmp.patch用于去掉patch文件中没有修饰符（eg:! + -）的信息,生成sftree-cmp**.patch文件
+执行命令sh backupsh.sh android-new.raw (用户自行指定的路径)进行微信聊天信息的备份
+执行命令sh recoversh.sh android-old.raw (用户自行指定的路径)进行微信聊天信息的恢复
+设置配置文件confile用于存放路径信息
+注:执行以上脚本须在root权限下
